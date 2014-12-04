@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+echo "Running pod install"
+pod install
+
+echo "Frankifying ..."
+frank setup
+frank-calabash install
+frank build --workspace hn.xcworkspace/ --scheme hn
