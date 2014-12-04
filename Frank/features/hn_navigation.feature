@@ -21,8 +21,8 @@ Feature:
   Scenario:
     Refresh the web page -- continue
 
-    When I press the refresh button
-    Then I should see the news refreshed
+#    When I press the refresh button
+#    Then I should see the news refreshed
 
   Scenario:
     Share news -- continue

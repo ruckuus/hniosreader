@@ -28,6 +28,7 @@ Then(/^I should see news reader page$/) do
   wait_until(:timeout => 60, :message => "wait until the web page is fully loaded") {
      element_exists("view:'UIToolbarButton' marked:'Refresh'")
   }
+  step "I wait for 3 seconds"
 end
 
 Given(/^I am on news reader page$/) do
