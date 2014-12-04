@@ -77,3 +77,11 @@ end
 Then(/^I click cancel$/) do
     step "I touch \"Cancel\""
 end
+
+When(/^I press black rounded button$/) do
+    touch "view:'UIButton' marked:'backButton2'"
+end
+
+Then(/^I should be in the home page$/) do
+    step "I should see the list of hn news"
+end

@@ -26,9 +26,15 @@ Feature:
 
   Scenario:
     Share news -- continue
+
     When I press share button
     Then I should see share window
     When I realised that I don't want to share
     Then I click cancel
 
+  Scenario:
+    Back to the news list -- continue
+
+    When I press black rounded button
+    Then I should be in the home page
 
