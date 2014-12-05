@@ -15,7 +15,7 @@ Then(/^I should see the list of hn news$/) do
 end
 
 When(/^I touch the first news$/) do
-  touch("tableViewCell first")
+  touch("tableViewCell index:2")
 end
 
 Then(/^I should see news reader page$/) do
