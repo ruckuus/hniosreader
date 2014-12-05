@@ -3,7 +3,6 @@ Then(/^I should see loading indicator$/) do
   wait_until(:timeout => 30, :message => "wait until the web page is fully loaded") {
      element_is_not_hidden("view:'HNTableViewCell' view:'UITableViewCellContentView' view:'UIButton'")
   }
-
 end
 
 Then(/^I should see the list of hn news$/) do
@@ -41,7 +40,13 @@ Given(/^I am on news reader page$/) do
 end
 
 When(/^I press the refresh button$/) do
-    touch("view:'UIToolbarButton' marked:'Refresh'")
+    if element_exists("view:'UIToolbarButton' marked:'Refresh'")
+        touch("view:'UIToolbarButton' marked:'Refresh'")
+    else
+        touch("view:'UIToolbarButton' marked:'Stop'")
+        sleep(0.5)
+        touch("view:'UIToolbarButton' marked:'Refresh'")
+    end
 end
 
 Then(/^I should see the news refreshed$/) do
@@ -85,4 +90,9 @@ end
 
 Then(/^I should be in the home page$/) do
     step "I should see the list of hn news"
+end
+
+When(/^I tap and drag down my thumb on list$/) do
+    drag_thumb_in_slider_with_default_duration("view:'HNTableViewCell'", 500)
+    sleep(20)
 end

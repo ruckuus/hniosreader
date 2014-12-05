@@ -21,8 +21,8 @@ Feature:
   Scenario:
     Refresh the web page -- continue
 
-#    When I press the refresh button
-#    Then I should see the news refreshed
+    When I press the refresh button
+    Then I should see the news refreshed
 
   Scenario:
     Share news -- continue
@@ -38,3 +38,10 @@ Feature:
     When I press black rounded button
     Then I should be in the home page
 
+  Scenario:
+    Refresh news list -- continue
+
+    When I tap and drag down my thumb on list
+    Then I should see loading indicator
+    When I wait for 3 seconds
+    Then I should see the list of hn news
