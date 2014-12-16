@@ -1,3 +1,9 @@
+When(/^I check internet connection$/) do
+  if element_exists("view:'_UIAlertControllerView' marked:'Something went wrong'") and element_exists("view:'UILabel' marked:'The internet connection appears to be offline'")
+    puts "Problem found: no internet."
+  end
+end
+
 Then(/^I should see loading indicator$/) do
   check_element_exists "view:'UIActivityIndicatorView' marked:'In progress'"
   wait_until(:timeout => 30, :message => "wait until the web page is fully loaded") {
